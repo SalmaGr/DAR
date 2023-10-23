@@ -12,7 +12,7 @@ public class Server {
 				// La première étape :	
 				System.out.println("je suis un serveur");
 				ServerSocket serversocket = new ServerSocket(500);	
-				// new ServerSocket(8080) reserve le port 1234 
+				// new ServerSocket(8080) reserve le port 8080 
 				/* ServerSocket est principalement réservée aux classes de type serveur 
 			 	pour attendre et accepter les connexions entrantes des clients. */
 				System.out.println("je suis un serveur j'attends un client");

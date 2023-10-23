@@ -26,7 +26,6 @@ public class ServerMt extends Thread {
 			e.printStackTrace();
 		}
 	}
-}
 
 class ClientProcess extends Thread {
 	private int numclient;
@@ -46,5 +45,6 @@ class ClientProcess extends Thread {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	  }
 	}// fin classe ClientServer (sous classe)
 }// fin classe ServerMT

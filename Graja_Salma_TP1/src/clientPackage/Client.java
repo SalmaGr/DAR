@@ -25,7 +25,7 @@ public class Client {
 			
 			Scanner scanner = new Scanner(System.in);
 			nb=scanner.nextInt();
-			
+		
 			os.write(nb);
 			System.out.println("la multiplication de "+nb+"*5="+is.read());
 			//System.out.println("laddition de "+nb+"+5="+is.read());

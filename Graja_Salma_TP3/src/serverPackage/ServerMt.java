@@ -1,6 +1,7 @@
 package serverPackage;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,7 +17,7 @@ public class ServerMt extends Thread {
 	public void run() {
 		// Le code de la méthode run est exécuté lorsque ce thread est démarré (start())
 		try {
-			ServerSocket ss = new ServerSocket(500); // Crée un serveur socket écoutant sur le port 500
+			ServerSocket ss = new ServerSocket(600); // Crée un serveur socket écoutant sur le port 500
 			while (true) {
 				Socket socket = ss.accept(); // accepter la connexion d'un client
 				new ClientProcess(socket, ++nombreclient).start();
@@ -41,7 +42,10 @@ class ClientProcess extends Thread {
 		System.out.println("le client : " + numclient + " de l'adresse ip " + socket.getRemoteSocketAddress());
 		try {
 			// Envoie un message de bienvenue au client avec son numéro
-			new PrintWriter(socket.getOutputStream(), true).println("Bienvenue vous êtes le client n° :" + numclient);
+			//new PrintWriter(socket.getOutputStream(), true).println("Bienvenue vous êtes le client n° :" + numclient);
+			ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+			oos.writeObject(new Message("Bienvenue vous êtes le client n° :" + numclient));
+			oos.flush(); // Assurez-vous que les données sont bien écrites dans le flux
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

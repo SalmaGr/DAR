@@ -13,8 +13,6 @@ public class Client {
 			InetSocketAddress inetsoketaddress = new InetSocketAddress(inetaddress, 500);
 			Socket socket = new Socket();
 			socket.connect(inetsoketaddress);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		} catch (Exception e) {e.printStackTrace();}
 	}
 }

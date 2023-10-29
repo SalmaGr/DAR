@@ -14,9 +14,9 @@ public class Server {
 				ServerSocket serversocket = new ServerSocket(600);
 				System.out.println("je suis un serveur j'attends un client...");
 				Socket socket = serversocket.accept();
-			
+	
 				System.out.println("un client est connecte");
-				
+			
 				InputStream is = socket.getInputStream(); 
 				OutputStream os = socket.getOutputStream();
 				

@@ -39,6 +39,7 @@ public class Server {
 			case "%":
 				resultat = op1 % op2;break;
 			}
+			
 			PrintWriter pw = new PrintWriter(os, true);
 			pw.println(resultat);
 			System.out.println("Déconnexion serveur");

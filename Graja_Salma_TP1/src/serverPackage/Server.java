@@ -38,6 +38,7 @@ public class Server {
 				//int a =nb + 5;
 				os.write(nb*5);
 				//os.write(a);
+				
 				// La dernière étape : Fermer socket
 				System.out.println("deconnexion serveur");
 				socket.close();

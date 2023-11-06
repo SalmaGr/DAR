@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -16,7 +18,10 @@ public class Client1 {
 
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket("localhost", 1234);
+        	InetAddress inetaddress = InetAddress.getByName("192.168.119.96");
+			InetSocketAddress inetsoketaddress = new InetSocketAddress(inetaddress, 600);
+			Socket socket = new Socket();
+			socket.connect(inetsoketaddress);
             OutputStream os = socket.getOutputStream();  
             InputStream is = socket.getInputStream(); 
             InputStreamReader isr = new InputStreamReader(is);

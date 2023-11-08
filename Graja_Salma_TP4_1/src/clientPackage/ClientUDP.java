@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class ClientUDP {
 		private static int PORT = 1234;
+    	// Créer un tableau de bytes pour recevoir les données du serveur
 		private static byte[] receiveData = new byte[1024];
 	    public static void main(String[] args) {
 	        try {
@@ -25,8 +26,6 @@ public class ClientUDP {
 	        	DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, PORT);
 	        	// Envoie le paquet de données au serveur
 	        	socket.send(sendPacket);
-	        	// Créer un tableau de bytes pour recevoir les données du serveur
-	        	byte[] receiveData = new byte[1024];
 	        	// Créer un paquet pour recevoir les données du serveur
 	        	DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
 	        	// Attend et reçoit des données du serveur dans le paquet
